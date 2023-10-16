@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "930286164303",
+    "project_id": "calling-app-651d3",
+    "storage_bucket": "calling-app-651d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930286164303:android:6ad8414c96debfaf734d3a",
+        "android_client_info": {
+          "package_name": "com.example.calling_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930286164303-ijpnbm0cumgh8f23cgv8kackcso5tilv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHNH5Q4PvmAUGBrMy4CL2ceJltRJgw9PA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930286164303-ijpnbm0cumgh8f23cgv8kackcso5tilv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
