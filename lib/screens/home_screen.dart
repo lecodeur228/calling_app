@@ -1,9 +1,9 @@
 import 'package:calling_app/screens/call_screen.dart';
-import 'package:calling_app/services/firebase_services.dart';
 import 'package:calling_app/widgets/contact_item.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:badges/badges.dart' as badges;
 
 class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
@@ -111,28 +111,53 @@ class _HomescreenState extends State<Homescreen> {
                     padding: const EdgeInsets.all(8.0),
                     child: Align(
                         alignment: Alignment.topLeft,
-                        child: CircleAvatar(
-                          radius: 25,
-                          backgroundImage: NetworkImage(userData['photoURL']),
+                        child: InkWell(
+                          onTap: (){
+                              Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: ((context) => CallScreen(
+                    name: userData['displayName'],
+                    userId: userData['uid'],
+                    callId: userData['ID']))));
+                          },
+                          child: badges.Badge(
+                            position:
+                                badges.BadgePosition.topEnd(top: -10, end: -12),
+                            badgeContent: const Icon(Icons.join_full),
+                            badgeStyle: const badges.BadgeStyle(
+                                badgeColor: Colors.transparent),
+                            child: CircleAvatar(
+                              radius: 25,
+                              backgroundImage: userData.isEmpty
+                                  ? const NetworkImage(
+                                      "https://static.vecteezy.com/system/resources/previews/008/442/086/non_2x/illustration-of-human-icon-user-symbol-icon-modern-design-on-blank-background-free-vector.jpg")
+                                  : NetworkImage(userData['photoURL']),
+                            ),
+                          ),
                         )),
                   ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "${userData['displayName']}",
-                        style: const TextStyle(
-                            color: Colors.black87,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
-                      ),
-                      Text(
-                        "ID: ${userData['ID']}",
-                        style: const TextStyle(
-                            color: Colors.black87,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16),
-                      ),
+                      userData.isEmpty
+                          ? const Text("")
+                          : Text(
+                              "${userData['displayName']}",
+                              style: const TextStyle(
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
+                      userData.isEmpty
+                          ? const Text("")
+                          : Text(
+                              "ID: ${userData['ID']}",
+                              style: const TextStyle(
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 16),
+                            ),
                     ],
                   ),
                   const Spacer(),
