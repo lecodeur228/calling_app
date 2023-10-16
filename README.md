@@ -1,16 +1,23 @@
-# calling_app
+Pour cloné APK :
 
-A new Flutter project.
+      git clone https://github.com/banarin/calling_app.git
 
-## Getting Started
+Pour installer tous les dépendance :
 
-This project is a starting point for a Flutter application.
+      flutter pub get
 
-A few resources to get you started if this is your first Flutter project:
+Pour installer toutes les dépendances :
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+      flutter run
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Voici la page de connexion via Google :
+
+![WhatsApp Image 2023-10-16 à 19 02 00_743e94af](https://github.com/banarin/calling_app/assets/92242447/9afd5e2e-3ab2-456b-9afc-6cdc8762b474)
+
+
+La page d'accueil :
+
+
+![WhatsApp Image 2023-10-16 à 19 02 05_dd7d7b63](https://github.com/banarin/calling_app/assets/92242447/3280a2e1-63d7-43ef-9baf-a24ea4b20bea)
+
+possible de passer un appel en saisissant l'identifiant d'appel ou de la personne
